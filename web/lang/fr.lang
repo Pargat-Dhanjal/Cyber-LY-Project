@@ -9,7 +9,7 @@
   "attacks": "Attaques",
   "settings": "Paramètres",
   "info": "Info",
-  "info_span": "INFO: ",
+  "info_span": "ℹ️ Info ",
   "all": "Tous",
   "channel": "Canaux",
   "devices": "Appareils enregistrés",

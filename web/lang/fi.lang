@@ -9,7 +9,7 @@
   "attacks": "Hyökkäykset",
   "settings": "Asetukset",
   "info": "Info",
-  "info_span": "INFO: ",
+  "info_span": "ℹ️ Info ",
   "all": "Kaikki",
   "channel": "Kanavat",
   "devices": "Tallennetut Laitteet",

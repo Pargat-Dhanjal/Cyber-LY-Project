@@ -1,37 +1,65 @@
 /* This software is licensed under the MIT License: https://github.com/spacehuhntech/esp8266_deauther */
 
 /* Global */
+:root {
+  --primary: #20c20e;
+  --text: #2c3e50;
+  --text-light: #555555;
+  --text-white: #ffffff;
+  --background: #f8f9fa;
+  --surface: #ffffff;
+  --border: #e9ecef;
+  --accent: #78a6dd3c;
+  --accent-light: #95b8e4;
+  --accent-dark: #5281bb;
+  
+  --success: #43B581;
+  --warning: #FAA61A;
+  --error: #F04747;
+  
+  --gray-dark: #929191;
+  --gray-medium: #ccc;
+  --gray-light: #6c6c6e;
+  
+  --shadow: rgba(0, 0, 0, 0.04);
+}
+
 body {
-	background: #36393e;
-	color: #bfbfbf;
-	font-family: sans-serif;
-	margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  line-height: 1.6;
 }
 
-h1 {
-	font-size: 1.7rem;
-    margin-top: 1rem;
-    background: #2f3136;
-    color: #bfbfbb;
-    padding: 0.2em 1em;
-    border-radius: 3px;
-	border-left: solid #20c20e 5px;
-    font-weight: 100;
+.info-box{
+	background: var(--surface);
+	padding: 1.2em;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+	margin-bottom: 1.5em;
 }
 
-h2 {
-	font-size: 1.1rem;
-    margin-top: 1rem;
-    background: #2f3136;
-    color: #bfbfbb;
-    padding: 0.4em 1.8em;
-    border-radius: 3px;
-	border-left: solid #20c20e 5px;
-    font-weight: 100;
+h1, h2 {
+  margin-top: 1.5rem;
+  background: var(--surface);
+  padding: 0.8em 1.2em;
+  border-radius: 8px;
+  border-left: solid var(--primary) 4px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
+
+h1 { font-size: 1.8rem; }
+h2 { font-size: 1.2rem; }
 
 table{
 	border-collapse: collapse;
+	background: var(--surface);
+	color: var(--text);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+	overflow: auto;
 }
 
 label{
@@ -52,10 +80,10 @@ p{
 	font-weight: bold;
 }
 .red{
-	color: #F04747;
+	color: var(--error);
 }
 .green{
-	color:#43B581;
+	color: var(--success);
 }
 .clear {
 	clear: both;
@@ -68,7 +96,7 @@ p{
 	padding: 0 !important;
 }
 .selected{
-	background: #4974a9;
+	background: var(--accent);
 }
 .status{
 	width: 120px;
@@ -89,16 +117,18 @@ p{
 #status {
 	text-align: center;
 	text-transform: capitalize;
-	padding: 5px;
-	color: #fff;
+	padding: 0.8rem;
+	color: var(--text-white);
 	position: sticky;
 	top: 0;
 	z-index: 99;
+	border-radius: 6px;
+	font-weight: 500;
 }
 
 #closeError{
 	float: right;
-	color: #fff;
+	color: var(--text-white);
 	padding: 0px 10px;
 	cursor: pointer;
 }
@@ -106,8 +136,10 @@ p{
 footer {
 	font-size: .95em;
 	text-align: center;
-	margin-top: 3em;
-	margin-bottom: 3em;
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: var(--gray-light);
+	color: var(--text-white);
 }
 
 /* ===== CHECKBOX ===== */
@@ -140,7 +172,7 @@ footer {
   left: 0;
   height: 28px;
   width: 28px;
-  background-color: #2F3136;
+  background-color: var(--gray-medium);
   border-radius: 4px;
 }
 
@@ -187,16 +219,16 @@ footer {
 
 
 hr {
-	background: #3e4146;
+	background: var(--gray-dark);
 }
 
 a {
-	color: #5281bb;
+	color: var(--accent-dark);
     text-decoration: none;
 }
 
 a:hover {
-	color: #95b8e4;
+	color: var(--accent-light);
 }
 
 li{
@@ -205,25 +237,24 @@ li{
 
 /* Meter */
 .meter_background{
-	background: #42464D;
+	background: var(--gray-light);
 	width: 100%;
 	word-break: normal;
 	min-width: 100px;
 }
 .meter_forground{
-	color: #fff;
-	padding: 4px 0;
+	color: var(--text-white);
 	/* + one of the colors below
 	(width will be set by the JS) */
 }
 .meter_green{
-	background: #43B581;
+	background: var(--success);
 }
 .meter_orange{
-	background: #FAA61A;
+	background: var(--warning);
 }
 .meter_red{
-	background: #F04747;
+	background: var(--error);
 }
 .meter_value{
 	padding-left: 8px;
@@ -235,20 +266,21 @@ table {
 	width: 100%;
 	min-width: 400px;
 	margin-bottom: 2em;
+	background: var(--surface);
+	color: var(--text);
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+	overflow: auto;
 }
 
 td{
 	word-break: break-all;
 }
 
-th{
-	word-break: break-word;
-}
-
 th, td {
-    padding: 10px 6px;
+    padding: 12px 16px;
     text-align: left;
-    border-bottom: 1px solid #5d5d5d;
+    border-bottom: 1px solid var(--border);
 }
 
 @media screen and (max-width: 820px) {
@@ -279,14 +311,20 @@ th, td {
 
 nav {
 	display: block;
-	background: #1d2236;
+	background: var(--surface);
+	color: var(--text);
 	font-weight: bold;
-	padding: 0 10px;
+	padding: 1rem;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
   
 nav a {
-	color: inherit;
+	color: var(--text);
 	padding: 0 .5em;
+}
+
+nav a:hover {
+	color: var(--text-light);
 }
 
 .menu {
@@ -297,10 +335,12 @@ nav a {
 	display: flex;
 	flex-direction: row;
 	display:block;
+	align-items: center;
+	gap: 1.5rem;
 }
 
 .menu li {
-	margin: 10px 20px 10px 0;
+	margin: 0;
 	display: inline-block;
 }
 
@@ -310,33 +350,30 @@ nav a {
 
 /* Inputs and buttons */
 .upload-script, .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-	display: inline-block;
-	height: 38px;
-	padding: 0 20px;
-	color:#fff;
-	text-align: center;
-	font-size: 11px;
-	font-weight: 600;
-	line-height: 38px;
-	letter-spacing: .1rem;
-	text-transform: uppercase;
-	text-decoration: none;
-	white-space: nowrap;
-	background: #2f3136;
-	border-radius: 4px;
-	border: none;
-	cursor: pointer;
-	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	padding: 0 24px;
+	color: var(--text);
+	font-size: 0.875rem;
+	font-weight: 500;
+	text-transform: none;
+	background: var(--surface);
+	border-radius: 6px;
+	border: 1px solid var(--border);
+	transition: all 0.2s ease;
 }
 
 button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {
-	background: #42444a;
+	background: var(--border);
+	transform: translateY(-1px);
 }
 button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
 	transform: scale(.93);
 }
 button:disabled:hover, input[type="submit"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="button"]:disabled:hover {
-	background: white;
+	background: var(--surface);
 	cursor: not-allowed;
 	opacity: 0.40;
 	filter: alpha(opacity=40);
@@ -347,15 +384,19 @@ button::-moz-focus-inner {
 }
 /* Forms */
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
-	height: 38px;
-	padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-	background-color: #2f3136;
-	border-radius: 4px;
-	box-shadow: none;
-	box-sizing: border-box;
-	color: #d4d4d4;
-	border: none;
-	width: 5em;
+	height: 40px;
+	padding: 8px 12px;
+	background-color: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	color: var(--text);
+	transition: border-color 0.2s ease;
+	font-size: 0.95rem;
+}
+
+input:focus, textarea:focus, select:focus {
+	border-color: var(--accent);
+	outline: none;
 }
 
 input[type="text"]{
